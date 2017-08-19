@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   resources :advisers
   resources :messages
   resources :reservations
+
+  get 'chat/show'
+  get 'search/new'
+  root 'pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
