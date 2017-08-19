@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :rates
   resources :spans
   resources :interventions
   resources :communicatables
   resources :extents
   resources :regions
   resources :genders
-  resources :advisers
+  resources :advisers do
+    resources :rates
+  end
   resources :messages
   resources :reservations
 

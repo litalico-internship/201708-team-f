@@ -1,5 +1,4 @@
 class RatesController < ApplicationController
-  before_action :set_rate, only: [:show, :edit, :update, :destroy]
 
   # GET /rates
   # GET /rates.json
@@ -15,6 +14,8 @@ class RatesController < ApplicationController
   # GET /rates/new
   def new
     @rate = Rate.new
+    @user = current_user
+    @adviser = Adviser.find(params[:adviser_id])
   end
 
   # GET /rates/1/edit
@@ -28,7 +29,7 @@ class RatesController < ApplicationController
 
     respond_to do |format|
       if @rate.save
-        format.html { redirect_to @rate, notice: 'Rate was successfully created.' }
+        format.html { redirect_to advisers_path, notice: 'Rate was successfully created.' }
         format.json { render :show, status: :created, location: @rate }
       else
         format.html { render :new }

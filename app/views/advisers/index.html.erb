@@ -32,7 +32,7 @@
         <td><%= link_to 'Edit', edit_adviser_path(adviser) %></td>
         <td><%= link_to 'Destroy', adviser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% if not adviser.rated?(current_user) then %>
-          <td><%= link_to '評価', new_rate_path(adviser) %></td>
+          <td><%= link_to '評価', new_adviser_rate_path(adviser) %></td>
         <% else %>
           <td colspan="1"></td>
         <% end %>
