@@ -20,7 +20,7 @@ spans = Span.create([{ name: "1ヶ月以内" }, { name: "1ヶ月〜6ヶ月"} , {
 users = User.create([{ email: "hogehoge@hoge.com", password: "hogehoge", name: "蒲焼さん太郎" }])
 
 # アドバイザ
-adviser1 = Adviser.create(name: "相談受け太郎", min_age: 8, max_age: 20, day: 1, start_time: '12:00', end_time: '17:00')
+adviser1 = Adviser.create(name: "相談受け太郎", min_age: 8, max_age: 20, day: 1, start_time: '12:00', end_time: '17:00', avator: open("#{Rails.root}/db/data/adviser1.png"))
 adviser1.genders << genders
 adviser1.regions << Region.find_by(name: "東京都")
 adviser1.extents << extents
@@ -28,7 +28,7 @@ adviser1.communicatables << communicatables
 adviser1.interventions << interventions
 adviser1.spans << spans
 
-adviser2 = Adviser.create(name: "相談受け子", min_age: 12, max_age: 24, day: 3, start_time: '12:00', end_time: '17:00')
+adviser2 = Adviser.create(name: "相談受け子", min_age: 12, max_age: 24, day: 3, start_time: '12:00', end_time: '17:00', avator: open("#{Rails.root}/db/data/adviser2.png"))
 adviser2.genders << genders
 adviser2.regions << Region.find_by(name: "東京都")
 adviser2.extents << extents
