@@ -39,7 +39,7 @@ adviser2.spans << spans
 # 予約
 user = users.first
 user.reservations.build(adviser_id: adviser1.id, start_time: Time.new(2017, 8, 19, 13), status: 0).save
+user.reservations.build(adviser_id: adviser2.id, start_time: Time.new(2017, 8, 20, 15), status: 0).save
 
 # 評価
 user.rates.build(adviser_id: adviser1.id, rate: 5).save
-user.rates.build(adviser_id: adviser2.id, rate: 4).save

@@ -1,10 +1,11 @@
 class AdvisersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_adviser, only: [:show, :edit, :update, :destroy]
 
   # GET /advisers
   # GET /advisers.json
   def index
-    @advisers = Adviser.all
+    @advisers = Adviser.reserved_by(current_user)
   end
 
   # GET /advisers/1

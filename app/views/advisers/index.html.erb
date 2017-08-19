@@ -8,12 +8,13 @@
       <th>Avator</th>
       <th>Name</th>
       <th>Comment</th>
+      <th>Rate</th>
       <th>Min age</th>
       <th>Max age</th>
       <th>Day</th>
       <th>Start time</th>
       <th>End time</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -23,6 +24,7 @@
         <td><%= image_tag adviser.avator_url(:thumb) %></td>
         <td><%= adviser.name %></td>
         <td><%= adviser.comment %></td>
+        <td><%= adviser.rate %> / 5.0</td>
         <td><%= adviser.min_age %></td>
         <td><%= adviser.max_age %></td>
         <td><%= adviser.day %></td>
@@ -31,6 +33,11 @@
         <td><%= link_to 'Show', adviser %></td>
         <td><%= link_to 'Edit', edit_adviser_path(adviser) %></td>
         <td><%= link_to 'Destroy', adviser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if not adviser.rated?(current_user) then %>
+          <td><%= link_to '評価', new_adviser_rate_path(adviser) %></td>
+        <% else %>
+          <td colspan="1"></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
