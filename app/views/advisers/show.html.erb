@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @adviser.name %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @adviser.comment %>
+</p>
+
+<p>
+  <strong>Avator:</strong>
+  <%= @adviser.avator %>
+</p>
+
+<p>
+  <strong>Min age:</strong>
+  <%= @adviser.min_age %>
+</p>
+
+<p>
+  <strong>Max age:</strong>
+  <%= @adviser.max_age %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @adviser.day %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @adviser.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @adviser.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_adviser_path(@adviser) %> |
+<%= link_to 'Back', advisers_path %>

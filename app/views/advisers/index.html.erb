@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Advisers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Avator</th>
+      <th>Min age</th>
+      <th>Max age</th>
+      <th>Day</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advisers.each do |adviser| %>
+      <tr>
+        <td><%= adviser.name %></td>
+        <td><%= adviser.comment %></td>
+        <td><%= adviser.avator %></td>
+        <td><%= adviser.min_age %></td>
+        <td><%= adviser.max_age %></td>
+        <td><%= adviser.day %></td>
+        <td><%= adviser.start_time %></td>
+        <td><%= adviser.end_time %></td>
+        <td><%= link_to 'Show', adviser %></td>
+        <td><%= link_to 'Edit', edit_adviser_path(adviser) %></td>
+        <td><%= link_to 'Destroy', adviser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adviser', new_adviser_path %>
