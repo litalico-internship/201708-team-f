@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: litalico-internship_production
-  username: litalico-internship
+  #username: litalico-internship
   password: <%= ENV['LITALICO-INTERNSHIP_DATABASE_PASSWORD'] %>
