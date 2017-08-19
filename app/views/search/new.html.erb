@@ -84,28 +84,37 @@
       <td>コミュニケーション</td>
       <td>
         <select name="communication" v-model="selectedCommunication">
-        <option value="yes">ある</option>
-        <option value="no">ない</option>
+        <option value="0">ない</option>
+        <option value="1">ある</option>
       </td>
     </tr>
-    <tr v-if="selectedCommunication === 'yes'">
-      <td>yes</td>
+    <tr v-if="selectedCommunication === '1'">
+      <td>誰と</td>
+      <td>
+        <select name="who_communication">
+        <option value="0">父</option>
+        <option value="1">母</option>
+        <option value="2">兄弟</option>
+        <option value="3">その他</option>
+      </td>
+    </tr>
+    <tr v-if="selectedCommunication === '1'">
+      <td>頻度</td>
+      <td>
+        <select name="frequency_communication">
+        <option value="0">月1回</option>
+        <option value="1">月2,3回</option>
+        <option value="2">週1回</option>
+        <option value="3">週2,3回</option>
+        <option value="4">それ以上</option>
+      </td>
     </tr>
     <tr v-else>
-      <td>no</td>
+      <td>いつから</td>
+      <td>
+        <input name=since_no_communication type="datetime-local">
+      </td>
     </tr>
-    <!--
-    <div v-if="selectedCommunication === 'yes'">
-      <tr>
-        <td>yes</td>
-      </tr>
-    </div>
-    <div v-else>
-      <tr>
-        <td>no</td>
-      </tr>
-    </div>
-    -->
   </table>
   <input type="submit" value="アドバイザー検索">
 </form>
@@ -114,7 +123,7 @@
   new Vue({
     el: "#form",
     data: {
-      selectedCommunication: "yes"
+      selectedCommunication: "1"
     }
   })
 </script>
