@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reservation/new'
+
   devise_for :users
   resources :rates
   resources :spans
