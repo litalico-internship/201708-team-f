@@ -21,6 +21,10 @@ class Adviser < ApplicationRecord
     self.rates.where(user_id: user_id).count != 0
   end
 
+  def rate
+    self.rates.average(:rate).to_f
+  end
+
   def self.reserved_by(user)
     ids = Reservation.where(user_id: user.id).map do |r|
       r.adviser_id
