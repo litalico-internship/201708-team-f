@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  adviser: one
+  start_time: 2017-08-19 12:15:39
+  status: 1
+
+two:
+  user: two
+  adviser: two
+  start_time: 2017-08-19 12:15:39
+  status: 1

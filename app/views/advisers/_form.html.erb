@@ -1,0 +1,57 @@
+<%= form_with(model: adviser, local: true) do |form| %>
+  <% if adviser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adviser.errors.count, "error") %> prohibited this adviser from being saved:</h2>
+
+      <ul>
+      <% adviser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :adviser_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, id: :adviser_comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :avator %>
+    <%= form.text_field :avator, id: :adviser_avator %>
+  </div>
+
+  <div class="field">
+    <%= form.label :min_age %>
+    <%= form.number_field :min_age, id: :adviser_min_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :max_age %>
+    <%= form.number_field :max_age, id: :adviser_max_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.number_field :day, id: :adviser_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.time_select :start_time, id: :adviser_start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.time_select :end_time, id: :adviser_end_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

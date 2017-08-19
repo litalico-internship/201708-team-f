@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Communicatables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @communicatables.each do |communicatable| %>
+      <tr>
+        <td><%= communicatable.name %></td>
+        <td><%= link_to 'Show', communicatable %></td>
+        <td><%= link_to 'Edit', edit_communicatable_path(communicatable) %></td>
+        <td><%= link_to 'Destroy', communicatable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Communicatable', new_communicatable_path %>

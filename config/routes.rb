@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  resources :rates
+  resources :spans
+  resources :interventions
+  resources :communicatables
+  resources :extents
+  resources :regions
+  resources :genders
+  resources :advisers
+  resources :messages
+  resources :reservations
+
   get 'chat/show'
   get 'search/new'
   root 'pages#index'

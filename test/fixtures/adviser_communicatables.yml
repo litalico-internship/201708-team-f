@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  adviser: one
+  communicatable: one
+
+two:
+  adviser: two
+  communicatable: two
