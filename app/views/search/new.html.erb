@@ -1,2 +1,93 @@
 <h1>Search#new</h1>
 <p>Find me in app/views/search/new.html.erb</p>
+
+<form action="" method="post">
+<table>
+    <tr>
+        <td>名前(申請者)</td>
+        <td>
+            <input type="text" name="name_requester">
+        </td>
+    </tr>
+    <tr>
+        <td>名前(対象者)</td>
+        <td>
+            <input type="text" name="name_target">
+        </td>
+    </tr>
+    <tr>
+        <td>名前(対象者)</td>
+        <td>
+            <input type="text" name="name_target">
+        </td>
+    </tr>
+    <tr>
+        <td>住所</td>
+        <td>
+            <input type="text" name="name_target">
+        </td>
+    </tr>
+    <tr>
+        <td>性別</td>
+        <td>
+            <select name="sex">
+            <option value="0">男</option>
+            <option value="0">女</option>
+        </td>
+    </tr>
+    <tr>
+        <td>年齢</td>
+        <td>
+            <select name="age">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+        </td>
+    </tr>
+    <tr>
+        <td>引きこもり開始時期</td>
+        <td>
+            <input name=start_homebody type="datetime-local">
+        </td>
+    </tr>
+    <tr>
+        <td>原因</td>
+        <td>
+            <select name="cause">
+            <option value="0">分からない</option>
+            <option value="1">原因1</option>
+            <option value="2">原因2</option>
+            <option value="3">原因3</option>
+            <option value="4">原因4</option>
+            <option value="5">原因5</option>
+        </td>
+    </tr>
+    <tr>
+        <td>コミュニケーション</td>
+        <td>
+            <select name="communication">
+            <option value="yes">ある</option>
+            <option value="no">ない</option>
+        </td>
+    </tr>
+</table>
+<input type="submit" value="アドバイザー検索">
+</form>
