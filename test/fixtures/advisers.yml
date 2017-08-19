@@ -7,8 +7,8 @@ one:
   min_age: 1
   max_age: 1
   day: 1
-  start_time: 1
-  end_time: 1
+  start_time: 2017-08-19 12:24:37
+  end_time: 2017-08-19 12:24:37
 
 two:
   name: MyString
@@ -17,5 +17,5 @@ two:
   min_age: 1
   max_age: 1
   day: 1
-  start_time: 1
-  end_time: 1
+  start_time: 2017-08-19 12:24:37
+  end_time: 2017-08-19 12:24:37

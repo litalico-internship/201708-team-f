@@ -7,8 +7,8 @@ class CreateAdvisers < ActiveRecord::Migration[5.1]
       t.integer :min_age
       t.integer :max_age
       t.integer :day
-      t.integer :start_time
-      t.integer :end_time
+      t.time :start_time
+      t.time :end_time
 
       t.timestamps
     end

@@ -43,12 +43,12 @@
 
   <div class="field">
     <%= form.label :start_time %>
-    <%= form.number_field :start_time, id: :adviser_start_time %>
+    <%= form.time_select :start_time, id: :adviser_start_time %>
   </div>
 
   <div class="field">
     <%= form.label :end_time %>
-    <%= form.number_field :end_time, id: :adviser_end_time %>
+    <%= form.time_select :end_time, id: :adviser_end_time %>
   </div>
 
   <div class="actions">
