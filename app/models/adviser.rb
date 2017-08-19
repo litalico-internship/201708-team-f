@@ -16,4 +16,15 @@ class Adviser < ApplicationRecord
   has_many :rates, dependent: :destroy
 
   mount_uploader :avator, ImageUploader
+
+  def rated?(user_id)
+    self.rates.where(user_id: user_id).count != 0
+  end
+
+  def self.reserved_by(user)
+    ids = Reservation.where(user_id: user.id).map do |r|
+      r.adviser_id
+    end
+    self.where(id: ids)
+  end
 end
