@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Avator</th>
       <th>Name</th>
       <th>Comment</th>
-      <th>Avator</th>
       <th>Min age</th>
       <th>Max age</th>
       <th>Day</th>
@@ -20,9 +20,9 @@
   <tbody>
     <% @advisers.each do |adviser| %>
       <tr>
+        <td><%= image_tag adviser.avator_url(:thumb) %></td>
         <td><%= adviser.name %></td>
         <td><%= adviser.comment %></td>
-        <td><%= adviser.avator %></td>
         <td><%= adviser.min_age %></td>
         <td><%= adviser.max_age %></td>
         <td><%= adviser.day %></td>

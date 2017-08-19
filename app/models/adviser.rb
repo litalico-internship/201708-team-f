@@ -14,4 +14,6 @@ class Adviser < ApplicationRecord
   has_many :adviser_spans
   has_many :spans, through: :adviser_spans
   has_many :rates, dependent: :destroy
+
+  mount_uploader :avator, ImageUploader
 end
