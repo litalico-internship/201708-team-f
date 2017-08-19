@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :reservations
 
+  get 'eval/new'
   get 'chat/show'
   get 'search/new'
   root 'pages#index'
