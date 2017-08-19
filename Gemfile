@@ -59,3 +59,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'vuejs-rails'
+
+# need to bootstrap
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
