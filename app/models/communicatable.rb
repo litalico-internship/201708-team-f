@@ -1,0 +1,2 @@
+class Communicatable < ApplicationRecord
+end

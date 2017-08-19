@@ -1,0 +1,22 @@
+<%= form_with(model: communicatable, local: true) do |form| %>
+  <% if communicatable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(communicatable.errors.count, "error") %> prohibited this communicatable from being saved:</h2>
+
+      <ul>
+      <% communicatable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :communicatable_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
