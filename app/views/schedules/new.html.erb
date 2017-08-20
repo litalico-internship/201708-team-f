@@ -1,0 +1,18 @@
+<%= form_with url: schedules_path, method: :post, local: true do %>
+  <%= label_tag :need_time, '子供にかけたい時間：' %>
+  <%= time_select '', :need_time, {:default => {:hour => '1', :minute => '00'}}  %>
+
+  <%= label_tag 'work[start_at]', '仕事が始まる時間：' %>
+  <%= time_select '', :work_start_at, {:default => {:hour => '7', :minute => '00'}} %>
+
+  <%= label_tag 'work[finish_at]', '仕事が終わる時間：' %>
+  <%= time_select '', :work_finish_at, {:default => {:hour => '17', :minute => '00'}} %>
+
+  <%= label_tag :oneway_commute_time, '通勤時間（片道）：' %>
+  <%= time_select '', :oneway_commute_time, {:default => {:hour => '0', :minute => '20'}} %>
+
+  <%= label_tag :must_task, 'やらないといけない課題の名前：' %>
+  <%= text_field_tag :must_task %>
+
+  <%= submit_tag '送信する' %>
+<% end %>
