@@ -1,0 +1,28 @@
+<h1>相談確定のお知らせ</h1>
+<h2>アドバイザー</h2>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="1"></th>
+          <th>名前</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= image_tag @reservation.adviser.avator_url(:thumb) %></td>
+          <td><%= @reservation.adviser.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>日時</h2>
+<div class="row">
+  <div class="col-md-4">
+    <%= @reservation.start_time.strftime("%m月%d日 %H時%M分") %> 開始
+  </div>
+</div>
