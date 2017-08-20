@@ -7,6 +7,7 @@ import time
 import csv
 from dateutil.relativedelta import relativedelta
 import sys
+import os
 
 def StrToTimeSec(str):
     str_to_time = time.strptime(str, '%H:%M')
@@ -66,15 +67,13 @@ def main():
     output_list.append(24*60*60 - sleeping_sec - breakfast_sec - output_list[3] - commu_time_sec*2 - work_time_sec - dinner_sec - most_valiable_sec - hkeeping_sec - bath_sec)
     output_list.append(bath_sec)
 
-    print(output_list)
     all_time = output_list[0] + output_list[1] + output_list[3] + output_list[4] + output_list[5] + output_list[6] + output_list[7] + output_list[8] + output_list[9] + output_list[10] + output_list[11]
-    print(all_time-24*60*60)
-
 
     # 描画へ
     env = Environment(loader = FileSystemLoader('/', encoding = 'utf-8'))
     # d3.jsファイルへのパス指定
-    temp1 = env.get_template('../index.html')
+    path = os.path.join(os.path.dirname(__file__), 'index.html')
+    temp1 = env.get_template(path)
 
     # d3.jsファイルへ値を渡す
     html = temp1.render(output_list=str(output_list))
