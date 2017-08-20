@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'eval/new'
   get 'chat/show'
   get 'search/new'
+  post 'search/search_result'
   root 'pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
