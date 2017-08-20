@@ -2,19 +2,17 @@
 
 <h1>Advisers</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Avator</th>
-      <th>Name</th>
-      <th>Comment</th>
-      <th>Rate</th>
-      <th>Min age</th>
-      <th>Max age</th>
-      <th>Day</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th colspan="4"></th>
+      <th colspan="1"></th>
+      <th>名前</th>
+      <th>コメント</th>
+      <th>評価</th>
+      <th>年齢層</th>
+      <th>曜日</th>
+      <th>時間</th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -25,14 +23,9 @@
         <td><%= adviser.name %></td>
         <td><%= adviser.comment %></td>
         <td><%= adviser.rate %> / 5.0</td>
-        <td><%= adviser.min_age %></td>
-        <td><%= adviser.max_age %></td>
-        <td><%= adviser.day %></td>
-        <td><%= adviser.start_time %></td>
-        <td><%= adviser.end_time %></td>
-        <td><%= link_to 'Show', adviser %></td>
-        <td><%= link_to 'Edit', edit_adviser_path(adviser) %></td>
-        <td><%= link_to 'Destroy', adviser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= adviser.min_age %>〜<%= adviser.max_age %></td>
+        <td><%= adviser.day_string %></td>
+        <td><%= adviser.start_time.strftime("%H時%M分") %>〜<%= adviser.end_time.strftime("%H時%M分") %></td>
         <% if not adviser.rated?(current_user) then %>
           <td><%= link_to '評価', new_adviser_rate_path(adviser) %></td>
         <% else %>
