@@ -17,9 +17,9 @@ class Adviser < ApplicationRecord
 
   mount_uploader :avator, ImageUploader
 
-  scope :gender, -> gender_id { left_joins(:genders).where("genders.id" => gender_id || Gender.pluck(:id)) }
-  scope :region, -> region_id { left_joins(:regions).where("regions.id" => region_id || Region.pluck(:id)) }
-  scope :extent, -> extent_id { left_joins(:extents).where("extents.id" => extent_id || Extent.pluck(:id)) }
+  scope :gender, -> gender_id { includes(:genders).where("genders.id" => gender_id || Gender.pluck(:id)) }
+  scope :region, -> region_id { includes(:regions).where("regions.id" => region_id || Region.pluck(:id)) }
+  scope :extent, -> extent_id { includes(:extents).where("extents.id" => extent_id || Extent.pluck(:id)) }
   scope :communicatable, -> communicatable_id { left_joins(:communicatables).where("communicatables.id" => communicatable_id || Communicatable.pluck(:id)) }
   scope :intervention, -> intervention_id { left_joins(:interventions).where("interventions.id" => intervention_id || Intervention.pluck(:id)) }
   scope :span, -> span_id { left_joins(:spans).where("spans.id" => span_id || Span.pluck(:id)) }
