@@ -5,6 +5,7 @@ class SearchController < ApplicationController
 
   def search_result
     @advisers = Adviser.search(search_params)
+    @search = true
     render 'advisers/index'
   end
 

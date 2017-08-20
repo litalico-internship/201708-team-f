@@ -26,3 +26,5 @@
     <%= @reservation.start_time.strftime("%m月%d日 %H時%M分") %> 開始
   </div>
 </div>
+
+<%= button_to "予約を確認する", reservation_index_path, {method: "get", class: "btn btn-default"} %>
