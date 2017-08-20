@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :genders
   resources :advisers do
     resources :rates
+    get :chat, controller: :chat, action: :show
+    resources :reservations
   end
   resources :messages
   resources :reservations
