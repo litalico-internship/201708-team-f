@@ -3,7 +3,8 @@ class SearchController < ApplicationController
   end
 
   def search_result
-    advier = Adviser.search(params[:gender], params[:region], params[:extent], 
+    @adviers = Adviser.search(params[:gender], params[:region], params[:extent], 
                    params[:communicatable], params[:intervention], params[:span])
+    render 'advisers/index'
   end
 end
