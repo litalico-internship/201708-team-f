@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :advisers do
     resources :rates
     get :chat, controller: :chat, action: :show
-    resources :reservations
+    get :reservation, controller: :reservation, action: :new
+    post :reservation, controller: :reservation, action: :create
   end
   resources :messages
   resources :reservations
