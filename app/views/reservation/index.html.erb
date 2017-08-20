@@ -1,0 +1,24 @@
+<h1>相談一覧</h1>
+<% current_user.reservations.order(:start_time).each do |reservation| %>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="1"></th>
+            <th>名前</th>
+            <th>日時</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= image_tag reservation.adviser.avator_url(:thumb) %></td>
+            <td><%= reservation.adviser.name %></td>
+            <td><%= reservation.start_time.strftime("%m月%d日 %H時%M分") %> 開始</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>

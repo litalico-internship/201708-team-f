@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'chat/show'
   get 'search/new'
   post 'search/search_result'
+  get 'reservation/index'
   root 'pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
