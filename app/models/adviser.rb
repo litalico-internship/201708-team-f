@@ -17,6 +17,13 @@ class Adviser < ApplicationRecord
 
   mount_uploader :avator, ImageUploader
 
+  scope :gender, -> gender_id { joins(:genders).where('genders.id = ?', gender_id) }
+  scope :region, -> region_id { joins(:regions).where('regions.id = ?', region_id) }
+  scope :extent, -> extent_id { joins(:extents).where('extents.id = ?', extent_id) }
+  scope :communicatable, -> communicatable_id { joins(:communicatables).where('communicatables.id = ?', communicatable_id) }
+  scope :intervention, -> intervention_id { joins(:interventions).where('interventions.id = ?', intervention_id) }
+  scope :span, -> span_id { joins(:spans).where('spans.id = ?', span_id) }
+
   def rated?(user_id)
     self.rates.where(user_id: user_id).count != 0
   end
@@ -30,5 +37,10 @@ class Adviser < ApplicationRecord
       r.adviser_id
     end
     self.where(id: ids)
+  end
+
+  def self.search(gender, region, extent, communicatable, intervention, span)
+    self.gender(gender).region(region).extent(extent).communicatable(communicatable).
+      intervention(intervention).span(span)
   end
 end
