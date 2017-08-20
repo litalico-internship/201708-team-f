@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :messages
   resources :reservations
+  resources :schedules, only: %w[create new]
 
   get 'eval/new'
   get 'chat/show'
