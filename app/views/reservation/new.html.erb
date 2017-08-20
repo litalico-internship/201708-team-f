@@ -1,14 +1,31 @@
 <h1>相談予約</h1>
-<p>Find me in app/views/reservation/new.html.erb</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+      <th>名前</th>
+      <th>コメント</th>
+      <th>評価</th>
+      <th>年齢層</th>
+      <th>曜日</th>
+      <th>時間</th>
+    </tr>
+  </thead>
 
-<h2>
-  adviser情報
-</h2>
+  <tbody>
+    <tr>
+      <td><%= image_tag @adviser.avator_url(:thumb) %></td>
+      <td><%= @adviser.name %></td>
+      <td><%= @adviser.comment %></td>
+      <td><%= @adviser.rate %> / 5.0</td>
+      <td><%= @adviser.min_age %>〜<%= @adviser.max_age %></td>
+      <td><%= @adviser.day_string %></td>
+      <td><%= @adviser.start_time.strftime("%H時%M分") %>〜<%= @adviser.end_time.strftime("%H時%M分") %></td>
+    </tr>
+  </tbody>
+</table>
 
-<h2>
-  予約フォーム
-</h2>
-<form action="" method="post" id="form" class="form-group">
+<form action="reservation" method="post" id="form" class="form-group">
   <div class="row">
     <div class="col-md-12">
       <label for="">日時</label>
