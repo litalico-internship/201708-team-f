@@ -1,9 +1,10 @@
 class SearchController < ApplicationController
+  protect_from_forgery except: [:new, :search_result]
   def new
   end
 
   def search_result
-    @adviers = Adviser.search(search_params)
+    @advisers = Adviser.search(search_params)
     render 'advisers/index'
   end
 
