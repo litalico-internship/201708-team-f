@@ -1,7 +1,7 @@
 <h1>アドバイザー検索のためのアンケート</h1>
 <p>Find me in app/views/search/new.html.erb</p>
 
-<form action="search_result" method="post" id="form">
+<form action="search_result" method="post" id="form" class="form-group">
   <!--
   <div class="row">
     <div class="col-md-8">名前(親)</div>
@@ -11,27 +11,35 @@
   </div>
 -->
   <div class="row">
-    <div class="col-md-8">名前(子供)</div>
-    <div class="col-md-8">
-      <input type="text" name="child">
+    <div class="col-md-12">
+      <label for="child_name">名前(子供)</label>
+    </div>
+    <div class="col-md-4">
+      <input type="text" name="child_name" class="form-control">
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">住所</div>
-    <div class="col-md-8">
-      <%= select_tag :region, options_from_collection_for_select(Region.all, :id, :name) %>
+    <div class="col-md-12">
+      <label for="region">住所</label>
+    </div>
+    <div class="col-md-4">
+      <%= select_tag :region, options_from_collection_for_select(Region.all, :id, :name), :class => "form-control" %>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">性別</div>
-    <div class="col-md-8">
-      <%= select_tag :gender, options_from_collection_for_select(Gender.all, :id, :name) %>
+    <div class="col-md-12">
+      <label for="gender">性別</label>
+    </div>
+    <div class="col-md-4">
+      <%= select_tag :gender, options_from_collection_for_select(Gender.all, :id, :name), :class => "form-control" %>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">年齢</div>
-    <div class="col-md-8">
-      <select name="age">
+    <div class="col-md-12">
+      <label for="age">年齢</label>
+    </div>
+    <div class="col-md-4">
+      <select name="age" class="form-control">
         <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -57,21 +65,27 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">引きこもり開始時期</div>
-    <div class="col-md-8">
-      <input name=start_homebody type="datetime-local">
+    <div class="col-md-12">
+      <label for="start_homebody">引きこもり開始時期</label>
+    </div>
+    <div class="col-md-4">
+      <input name=start_homebody type="datetime-local" class="form-control">
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">引きこもりの程度</div>
-    <div class="col-md-8">
-      <%= select_tag :extent, options_from_collection_for_select(Extent.all, :id, :name) %>
+    <div class="col-md-12">
+      <label>引きこもりの程度</label>
+    </div>
+    <div class="col-md-4">
+      <%= select_tag :extent, options_from_collection_for_select(Extent.all, :id, :name), :class => "form-control" %>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">原因</div>
-    <div class="col-md-8">
-      <select name="cause">
+    <div class="col-md-12">
+      <label for="cause">原因</label>
+    </div>
+    <div class="col-md-4">
+      <select name="cause" class="form-control">
         <option value="0">分からない</option>
         <option value="1">原因1</option>
         <option value="2">原因2</option>
@@ -82,18 +96,22 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8">コミュニケーション</div>
-    <div class="col-md-8">
-      <select name="communication" v-model="selectedCommunication">
+    <div class="col-md-12">
+      <label for="communication">コミュニケーション</label>
+    </div>
+    <div class="col-md-4">
+      <select name="communication" v-model="selectedCommunication" class="form-control">
         <option value="0">ない</option>
         <option value="1">ある</option>
       </select>
     </div>
   </div>
   <div v-if="selectedCommunication === '1'" class="row">
-    <div class="col-md-8">誰と</div>
-    <div class="col-md-8">
-      <select name="who_communication">
+    <div class="col-md-12">
+      <label for="who_communication">誰と</label>
+    </div>
+    <div class="col-md-4">
+      <select name="who_communication" class="form-control">
         <option value="0">父</option>
         <option value="1">母</option>
         <option value="2">兄弟</option>
@@ -102,9 +120,11 @@
     </div>
   </div>
   <div v-if="selectedCommunication === '1'" class="row">
-    <div class="col-md-8">頻度</div>
-    <div class="col-md-8">
-      <select name="frequency_communication">
+    <div class="col-md-12">
+      <label for="frequency_communication">頻度</label>
+    </div>
+    <div class="col-md-4">
+      <select name="frequency_communication" class="form-control">
         <option value="0">月1回</option>
         <option value="1">月2,3回</option>
         <option value="2">週1回</option>
@@ -114,12 +134,14 @@
     </div>
   </div>
   <div v-else class="row">
-    <div class="col-md-8">コミュニケーションのない期間</div>
-    <div class="col-md-8">
-      <%= select_tag :span, options_from_collection_for_select(Span.all, :id, :name) %>
+    <div class="col-md-12">
+      <label for="span">コミュニケーションのない期間</label>
+    </div>
+    <div class="col-md-4">
+      <%= select_tag :span, options_from_collection_for_select(Span.all, :id, :name) , :class => "form-control"%>
     </div>
   </div>
-  <input type="submit" value="アドバイザー検索" class="submit">
+  <input type="submit" value="アドバイザー検索" class="btn btn-primary">
 </form>
 
 <script>
