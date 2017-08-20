@@ -8,6 +8,7 @@ class SchedulesController < ApplicationController
     file = File.open(file_path, 'w')
     file.write(map_params_to_csv(params))
     file.close
+    output = `python #{Rails.root.join('lib', 'python', 'schedule.py')} #{file_path}}`
   end
 
   def map_params_to_csv(params)
