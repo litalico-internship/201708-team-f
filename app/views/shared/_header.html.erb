@@ -25,10 +25,12 @@
             <%= link_to "スケジュール調整ツール", new_schedule_path %>
           </li>
           <li>
-            <%= link_to "ログアウト", destroy_user_session_path %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </li>
         <% else %>
-          <%= link_to "ログイン", new_user_session_path %>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->
