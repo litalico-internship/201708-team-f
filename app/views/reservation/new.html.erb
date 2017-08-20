@@ -8,17 +8,21 @@
 <h2>
   予約フォーム
 </h2>
-<form action="" method="post" id="form">
+<form action="" method="post" id="form" class="form-group">
   <div class="row">
-    <div class="col-md-6">日時</div>
-    <div class="col-md-6">
-      <input type="datetime-local">
+    <div class="col-md-12">
+      <label for="">日時</label>
+    </div>
+    <div class="col-md-4">
+      <input type="datetime-local" name="datetime" class="form-control">
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">場所</div>
-    <div class="col-md-6">
-      <select name="place">
+    <div class="col-md-12">
+      <label for="place">場所</label>
+    </div>
+    <div class="col-md-4">
+      <select name="place" class="form-control">
         <option value="0">東京</option>
         <option value="1">神奈川</option>
         <option value="2">埼玉</option>
@@ -26,7 +30,5 @@
       </select>
     </div>
   </div>
-  <div class="row">
-    <input type="submit" value="予約" class="col-md-4">
-  </div>
+  <input type="submit" value="予約" class="btn btn-success">
 </form>
