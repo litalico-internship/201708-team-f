@@ -1,63 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Advisers</h1>
-
-<!--<div class="row thead">
-  <div class="col-md-2"></div>
-  <div class="col-md-2">名前</div>
-  <div class="col-md-2">評価</div>
-  <div class="col-md-2">年齢層</div>
-  <div class="col-md-2">曜日</div>
-  <div class="col-md-2">時間</div>
-  <div class="col-md-2"></div>
-  <div class="col-md-12">コメント</div>
-  </div>
--->
-
 <% @advisers.each do |adviser| %>
-  <div class="row">
-    <div class="col-md-3"><%= image_tag adviser.avator_url(:thumb) %></div>
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-2">名前</div>
-        <div class="col-md-5"><%= adviser.name %></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">コメント</div>
-        <div class="col-md-5"><%= adviser.comment %></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">評価</div>
-        <div class="col-md-5"><%= adviser.rate %> / 5.0</div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">年齢層</div>
-        <div class="col-md-5"><%= adviser.min_age %>〜<%= adviser.max_age %></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">曜日</div>
-        <div class="col-md-5"><%= adviser.day_string %></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2">時間</div>
-        <div class="col-md-5"><%= adviser.start_time.strftime("%H時%M分") %>〜<%= adviser.end_time.strftime("%H時%M分") %></div>
-      </div>
-      <div class="row">
-        <% if not adviser.rated?(current_user) then %>
-          <div class="col-md-5"><%= link_to '評価する', new_adviser_rate_path(adviser) %></div>
-        <% else %>
-          <div class="col-md-5"></div>
-        <% end %>
-      </div>
-      <div class="row">
-        <div class="col-md-5"><%= link_to '話をする', adviser_chat_path(adviser) %></div>
-      </div>
+<div class="row">
+  <div class="col-md-3"><%= image_tag adviser.avator_url(:thumb) %></div>
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col-md-2">名前</div>
+      <div class="col-md-5"><%= adviser.name %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">コメント</div>
+      <div class="col-md-5"><%= adviser.comment %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">評価</div>
+      <div class="col-md-5"><%= adviser.rate %>
+        / 5.0</div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">年齢層</div>
+      <div class="col-md-5"><%= adviser.min_age %>〜<%= adviser.max_age %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">曜日</div>
+      <div class="col-md-5"><%= adviser.day_string %></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">時間</div>
+      <div class="col-md-5"><%= adviser.start_time.strftime("%H時%M分") %>〜<%= adviser.end_time.strftime("%H時%M分") %></div>
+    </div>
+    <div class="row">
+      <% if not adviser.rated?(current_user) then %>
+      <div class="col-md-5"><%= button_to '評価する', new_adviser_rate_path(adviser), {method: "get", class: "btn btn-lg btn-info"} %></div>
+    <% else %>
+      <div class="col-md-5"></div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-5"><%= button_to '話をする', adviser_chat_path(adviser), {method: "get", class: "btn btn-lg btn-warning"} %></div>
     </div>
   </div>
+</div>
 <% end %>
-
-<br>
-
-<!--
-  <%= link_to 'New Adviser', new_adviser_path %>
--->
