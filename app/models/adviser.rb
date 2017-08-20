@@ -39,8 +39,8 @@ class Adviser < ApplicationRecord
     self.where(id: ids)
   end
 
-  def self.search(gender, region, extent, communicatable, intervention, span)
-    self.gender(gender).region(region).extent(extent).communicatable(communicatable).
-      intervention(intervention).span(span)
+  def self.search(params)
+    self.gender(params[:gender]).region(params[:region]).extent(params[:extent]).
+      communicatable(params[:communicatable]).intervention(params[:intervention]).span(params[:span])
   end
 end
