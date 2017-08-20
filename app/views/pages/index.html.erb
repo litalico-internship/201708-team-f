@@ -1,12 +1,10 @@
 <h1>Pages#index</h1>
 
-<ul>
-  <% if user_signed_in? then %>
-    <li><%= link_to "検索", search_new_path %></li>
-    <li><%= link_to "評価", advisers_path %></li>
-    <li><%= link_to "スケジュール調整ツール", new_schedule_path %></li>
-    <li><%= link_to "ログアウト", destroy_user_session_path %></li>
-  <% else %>
-    <%= link_to "ログイン", new_user_session_path %>
-  <% end %>
-</ul>
+<% if user_signed_in? then %>
+<%= button_to "検索", search_new_path, {method: "get", class: "btn btn-default"} %>
+<%= button_to "評価", advisers_path, {method: "get", class: "btn btn-default"} %>
+<%= button_to "スケジュール調整ツール", new_schedule_path, {method: "get", class: "btn btn-default"} %>
+<%= button_to "ログアウト", destroy_user_session_path, {method: "delete", class: "btn btn-default"} %>
+<% else %>
+<%= button_to "ログイン", new_user_session_path, {method: "get", class: "btn btn-default"} %>
+<% end %>
