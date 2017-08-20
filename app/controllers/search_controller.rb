@@ -10,6 +10,6 @@ class SearchController < ApplicationController
 
   private
   def search_params
-    params.permit(:gender, :region, :extent, :communicatable, :intervention, :span)
+    params.permit(:gender, :region, :extent, :communicatable, :intervention, :span, :age)
   end
 end
